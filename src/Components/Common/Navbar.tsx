@@ -47,7 +47,7 @@ const Navbar = () => {
           onClose={() => setOpenMenu(false)}
         >
           <MenuItem sx={{ display: "flex" }} onClick={() => navigateRoute("/")}>
-            <HomeOutlinedIcon />
+            {/* <HomeOutlinedIcon /> */}
             <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               Home
             </Typography>
@@ -56,7 +56,7 @@ const Navbar = () => {
             sx={{ display: "flex" }}
             onClick={() => navigateRoute("/skills")}
           >
-            <HomeOutlinedIcon />
+            {/* <HomeOutlinedIcon /> */}
             <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               My skills
             </Typography>
