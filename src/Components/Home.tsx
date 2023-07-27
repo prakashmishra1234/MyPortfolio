@@ -2,6 +2,7 @@ import { Box, Typography, Button } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Home = () => {
+  const LinkedinUrl: string = "https://www.linkedin.com/in/prakashmishra1234/";
   return (
     <Box
       sx={{
@@ -37,10 +38,15 @@ const Home = () => {
                 color: "#fff",
               },
             }}
+            onClick={(e) => {
+              window.open("/dummy.pdf", "_blank");
+            }}
           >
             Check My CV
           </Button>
           <Button
+            href={LinkedinUrl}
+            target="_blank"
             variant="outlined"
             endIcon={<LinkedInIcon />}
             sx={{
