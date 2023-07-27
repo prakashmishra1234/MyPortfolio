@@ -15,7 +15,7 @@ const Home = () => {
         alignItems: "center",
         width: { md: "auto", xs: "calc(100% - 80px);" },
         padding: "20px",
-        margin: { xs: "0 20px 10px 20px", md: "0 0 0 80px" },
+        margin: { xs: "20px", md: "0 0 0 80px" },
         backgroundColor: "#f0f1f2",
         "@media (max-width: 600px)": {
           boxShadow: "none",
