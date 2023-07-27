@@ -7,19 +7,39 @@ const Home = () => {
   return (
     <Box
       sx={{
+        backgroundImage: {
+          md: "url('/HomeBackground.jpg')",
+        },
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
         width: "100%",
         height: "100%",
         display: "flex",
-        justifyContent: "flex-start",
-        alignItems: { md: "center", xs: "flex-start" },
+        flexDirection: "column",
+        justifyContent: { md: "center", xs: "flex-start" },
+        alignItems: { md: "flex-start", xs: "center" },
       }}
     >
       <Box
         sx={{
-          padding: { md: "4rem", xs: "1rem" },
-          marginTop: { xs: "4rem", md: "0" },
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "20px",
         }}
       >
+        <Box
+          component="img"
+          sx={{
+            height: 200,
+            width: 200,
+            borderRadius: "50%",
+          }}
+          alt="Profile image"
+          src="/profileimage.jpg"
+        />
         <Typography variant="h4" fontFamily="Edu SA Beginner" color="#4c517a">
           Hello everyone!
         </Typography>
