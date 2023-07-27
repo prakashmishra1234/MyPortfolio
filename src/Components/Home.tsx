@@ -17,6 +17,9 @@ const Home = () => {
         padding: "20px",
         margin: { xs: "0 20px 10px 20px", md: "0 0 0 80px" },
         backgroundColor: "#f0f1f2",
+        "@media (max-width: 600px)": {
+          boxShadow: "none",
+        },
       }}
     >
       <Box
@@ -84,6 +87,9 @@ const Home = () => {
         padding: "20px",
         margin: { xs: "0 20px", md: "0 0 0 80px" },
         backgroundColor: "#f0f1f2",
+        "@media (max-width: 600px)": {
+          boxShadow: "none",
+        },
       }}
     >
       <Typography fontWeight={600} textAlign="center">
