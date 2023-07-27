@@ -1,9 +1,105 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Paper } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Home = () => {
   const LinkedinUrl: string = "https://www.linkedin.com/in/prakashmishra1234/";
   const ResumeURL: string = "/dummy.pdf";
+
+  const profileIntro = (
+    <Paper
+      elevation={3}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: { md: "60px", xs: "0" },
+        marginBottom: { xs: "10px", md: "0" },
+        padding: "10px 33px",
+        backgroundColor: "#f0f1f2",
+      }}
+    >
+      <Box
+        component="img"
+        sx={{
+          height: 150,
+          width: 150,
+          borderRadius: "50%",
+        }}
+        alt="Profile image"
+        src="/profileimage.jpg"
+      />
+      <Typography variant="h4" fontFamily="Edu SA Beginner">
+        Hello everyone!
+      </Typography>
+      <Typography variant="h6" fontFamily="cursive">
+        My name is Prakash Mishra
+      </Typography>
+      <Box sx={{ display: "flex", paddingTop: "1rem" }}>
+        <Button
+          variant="outlined"
+          size="small"
+          color="primary"
+          sx={{
+            fontSize: "small",
+            borderRadius: "20px",
+            "&:hover": {
+              color: "#c93b30",
+              borderColor: "#c93b30",
+            },
+          }}
+          onClick={(e) => {
+            window.open(ResumeURL, "_blank");
+          }}
+        >
+          Check My CV
+        </Button>
+        <Button
+          href={LinkedinUrl}
+          size="small"
+          target="_blank"
+          color="primary"
+          variant="outlined"
+          endIcon={<LinkedInIcon />}
+          sx={{
+            borderRadius: "20px",
+            marginLeft: "1rem",
+            "&:hover": {
+              color: "#c93b30",
+              borderColor: "#c93b30",
+            },
+          }}
+        >
+          Linkedin
+        </Button>
+      </Box>
+    </Paper>
+  );
+
+  const profileAbout = (
+    <Paper
+      elevation={3}
+      sx={{
+        width: { md: "25rem" },
+        padding: "1rem",
+        margin: { xs: "0 20px", md: "0 0 0 80px" },
+        backgroundColor: "#f0f1f2",
+      }}
+    >
+      <Typography fontWeight={600} textAlign="center">
+        About
+      </Typography>
+      <Typography fontFamily="cursive">
+        I'm a Software Engineer talented at contributing to team-developed
+        projects. Collaborative designer of useful solutions and perfectly
+        customized products. Proficient in writing application interface code
+        via JavaScript and ReactJs workflows. Adept at monitoring and
+        maintaining frontend performance and troubleshooting and debugging the
+        same to support overall performance.
+      </Typography>
+    </Paper>
+  );
+
   return (
     <Box
       sx={{
@@ -16,75 +112,13 @@ const Home = () => {
         width: "100%",
         height: "100%",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: { md: "center", xs: "flex-start" },
-        alignItems: { md: "flex-start", xs: "center" },
+        flexDirection: { xs: "column", md: "row" },
+        justifyContent: { md: "flex-start", xs: "center" },
+        alignItems: { md: "center", xs: "center" },
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "20px",
-        }}
-      >
-        <Box
-          component="img"
-          sx={{
-            height: 200,
-            width: 200,
-            borderRadius: "50%",
-          }}
-          alt="Profile image"
-          src="/profileimage.jpg"
-        />
-        <Typography variant="h4" fontFamily="Edu SA Beginner" color="#4c517a">
-          Hello everyone!
-        </Typography>
-        <Typography variant="h6" fontFamily="cursive" color="#070bf5">
-          <span style={{ color: "#c93b30" }}>My name is Prakash Mishra,</span>{" "}
-          I'm a Software Engineer.
-        </Typography>
-        <Box sx={{ display: "flex", paddingTop: "1rem" }}>
-          <Button
-            variant="outlined"
-            sx={{
-              borderRadius: "20px",
-              color: "#070bf5",
-              borderColor: "#070bf5",
-              "&:hover": {
-                backgroundColor: "#c93b30",
-                color: "#fff",
-              },
-            }}
-            onClick={(e) => {
-              window.open(ResumeURL, "_blank");
-            }}
-          >
-            Check My CV
-          </Button>
-          <Button
-            href={LinkedinUrl}
-            target="_blank"
-            variant="outlined"
-            endIcon={<LinkedInIcon />}
-            sx={{
-              borderRadius: "20px",
-              marginLeft: "1rem",
-              color: "#070bf5",
-              borderColor: "#070bf5",
-              "&:hover": {
-                backgroundColor: "#c93b30",
-                color: "#fff",
-              },
-            }}
-          >
-            Linkedin
-          </Button>
-        </Box>
-      </Box>
+      {profileIntro}
+      {profileAbout}
     </Box>
   );
 };

@@ -74,16 +74,19 @@ const Navbar = () => {
         variant="h6"
         style={{ fontFamily: "monospace", color: "#c93b30", fontWeight: "700" }}
       >
-        <span style={{ color: "#070bf5" }}>My</span> Portfolio
+        My Portfolio
       </Typography>
       <Box sx={{ flexGrow: 0, display: { md: "flex", xs: "none" } }}>
-        <Button sx={{ margin: "0 1rem" }} onClick={() => navigateRoute("/")}>
+        <Button
+          sx={{ margin: "0 1rem", color: "#c93b30" }}
+          onClick={() => navigateRoute("/")}
+        >
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
             Home
           </Link>
         </Button>
         <Button
-          sx={{ margin: "0 1rem" }}
+          sx={{ margin: "0 1rem", color: "#c93b30" }}
           onClick={() => navigateRoute("/skills")}
         >
           <Link
