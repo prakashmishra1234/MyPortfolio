@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, Menu, MenuItem, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Menu,
+  MenuItem,
+  IconButton,
+  Button,
+} from "@mui/material";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -70,15 +77,12 @@ const Navbar = () => {
         <span style={{ color: "#070bf5" }}>My</span> Portfolio
       </Typography>
       <Box sx={{ flexGrow: 0, display: { md: "flex", xs: "none" } }}>
-        <Typography
-          sx={{ margin: "0 1rem" }}
-          onClick={() => navigateRoute("/")}
-        >
+        <Button sx={{ margin: "0 1rem" }} onClick={() => navigateRoute("/")}>
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
             Home
           </Link>
-        </Typography>
-        <Typography
+        </Button>
+        <Button
           sx={{ margin: "0 1rem" }}
           onClick={() => navigateRoute("/skills")}
         >
@@ -88,7 +92,7 @@ const Navbar = () => {
           >
             My skills
           </Link>
-        </Typography>
+        </Button>
       </Box>
     </Box>
   );
