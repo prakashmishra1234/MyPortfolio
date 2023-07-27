@@ -13,9 +13,9 @@ const Home = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        marginLeft: { md: "60px", xs: "0" },
-        marginBottom: { xs: "10px", md: "0" },
-        padding: "10px 33px",
+        width: { md: "auto", xs: "calc(100% - 80px);" },
+        padding: "20px",
+        margin: { xs: "0 20px 10px 20px", md: "0 0 0 80px" },
         backgroundColor: "#f0f1f2",
       }}
     >
@@ -80,8 +80,8 @@ const Home = () => {
     <Paper
       elevation={3}
       sx={{
-        width: { md: "25rem" },
-        padding: "1rem",
+        width: { md: "25rem", xs: "calc(100% - 80px);" },
+        padding: "20px",
         margin: { xs: "0 20px", md: "0 0 0 80px" },
         backgroundColor: "#f0f1f2",
       }}
@@ -113,7 +113,7 @@ const Home = () => {
         height: "100%",
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        justifyContent: { md: "flex-start", xs: "center" },
+        justifyContent: "flex-start",
         alignItems: { md: "center", xs: "center" },
       }}
     >
