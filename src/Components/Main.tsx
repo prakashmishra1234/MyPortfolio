@@ -17,11 +17,11 @@ const Main = () => {
         width: "100%",
       }}
     >
-      <Box sx={{ height: "7vh" }}>
+      <Box sx={{ height: "4rem" }}>
         <Navbar />
       </Box>
 
-      <Box sx={{ height: "93vh", overflowY: "auto" }}>
+      <Box sx={{ height: "calc(100% - 4rem)", overflowY: "auto" }}>
         <Outlet />
       </Box>
     </Box>
