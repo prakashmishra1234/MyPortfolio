@@ -3,6 +3,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Home = () => {
   const LinkedinUrl: string = "https://www.linkedin.com/in/prakashmishra1234/";
+  const ResumeURL: string = "/dummy.pdf";
   return (
     <Box
       sx={{
@@ -10,7 +11,7 @@ const Home = () => {
         height: "100%",
         display: "flex",
         justifyContent: "flex-start",
-        alignItems: "center",
+        alignItems: { md: "center", xs: "flex-start" },
       }}
     >
       <Box
@@ -39,7 +40,7 @@ const Home = () => {
               },
             }}
             onClick={(e) => {
-              window.open("/dummy.pdf", "_blank");
+              window.open(ResumeURL, "_blank");
             }}
           >
             Check My CV
