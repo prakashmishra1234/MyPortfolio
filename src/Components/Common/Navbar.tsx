@@ -31,11 +31,8 @@ const Navbar = () => {
       }}
     >
       <Box sx={{ display: { md: "none", xs: "flex" } }}>
-        <IconButton color="primary">
-          <ListOutlinedIcon
-            sx={{ cursor: "pointer", fontSize: "2rem" }}
-            onClick={() => setOpenMenu(true)}
-          />
+        <IconButton color="primary" onClick={() => setOpenMenu(true)}>
+          <ListOutlinedIcon sx={{ cursor: "pointer", fontSize: "2rem" }} />
         </IconButton>
 
         <Menu

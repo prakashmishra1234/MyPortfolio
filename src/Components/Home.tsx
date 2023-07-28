@@ -1,5 +1,6 @@
 import { Box, Typography, Button, Paper } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
   const LinkedinUrl: string = "https://www.linkedin.com/in/prakashmishra1234/";
@@ -13,6 +14,7 @@ const Home = () => {
         flexDirection: "column",
         alignItems: "center",
         padding: "20px",
+        width: { md: "50%" },
       }}
     >
       <Typography
@@ -27,17 +29,31 @@ const Home = () => {
           variant="h6"
           fontFamily="cursive"
           color="primary"
-          sx={{ display: "inline" }}
+          fontSize="1.5rem"
         >
-          My name is Prakash Mishra,
-        </Typography>{" "}
-        <Typography
-          color="secondary"
-          variant="h6"
-          fontFamily="cursive"
-          sx={{ display: "inline" }}
-        >
-          I am a Software Engineer.
+          My name is Prakash Mishra,{" "}
+          <TypeAnimation
+            sequence={[
+              "I'm a Software Engineer.",
+              1000,
+              "I'm a React Developer.",
+              1000,
+              "I'm a Javascript Developer.",
+              1000,
+              "I'm a Nodejs Developer.",
+              1000,
+              "I'm a Android Developer.",
+              1000,
+            ]}
+            wrapper="span"
+            speed={25}
+            style={{
+              fontSize: "1.5rem",
+              color: "#f0ec0a",
+              fontFamily: "cursive",
+            }}
+            repeat={Infinity}
+          />
         </Typography>
       </Box>
 
@@ -89,8 +105,8 @@ const Home = () => {
     <Box
       component="img"
       sx={{
-        height: { md: 450, xs: 350 },
-        width: { md: 450, xs: 350 },
+        height: { md: 400, xs: 350 },
+        width: { md: 400, xs: 350 },
       }}
       alt="img home"
       src="/HomePageImage.png"
