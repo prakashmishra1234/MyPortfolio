@@ -30,19 +30,23 @@ const Home = () => {
           fontFamily="cursive"
           color="primary"
           fontSize="1.5rem"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
         >
-          My name is Prakash Mishra,{" "}
+          My name is Prakash Mishra, I'm a{" "}
           <TypeAnimation
             sequence={[
-              "I'm a Software Engineer.",
+              "Software Engineer.",
               1000,
-              "I'm a React Developer.",
+              "React Developer.",
               1000,
-              "I'm a Javascript Developer.",
+              "Javascript Developer.",
               1000,
-              "I'm a Nodejs Developer.",
+              "Nodejs Developer.",
               1000,
-              "I'm a Android Developer.",
+              "Android Developer.",
               1000,
             ]}
             wrapper="span"
