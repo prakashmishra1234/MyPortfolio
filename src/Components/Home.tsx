@@ -14,14 +14,9 @@ const Home = () => {
         flexDirection: "column",
         alignItems: "center",
         padding: "20px",
-        width: { md: "50%" },
       }}
     >
-      <Typography
-        variant="h4"
-        fontFamily="Edu SA Beginner"
-        color="primary.dark"
-      >
+      <Typography variant="h4" fontFamily="cursive" color="primary">
         Hello everyone!
       </Typography>
       <Box sx={{ display: "inline", textAlign: "center" }}>
@@ -63,17 +58,13 @@ const Home = () => {
 
       <Box sx={{ display: "flex", paddingTop: "1rem" }}>
         <Button
-          variant="outlined"
+          variant="contained"
           size="small"
-          color="secondary"
+          color="primary"
           sx={{
             fontSize: "small",
             borderRadius: "20px",
-            borderColor: "primary.dark",
-            "&:hover": {
-              color: "primary.dark",
-              borderColor: "secondary",
-            },
+            "&:hover": {},
           }}
           onClick={(e) => {
             window.open(ResumeURL, "_blank");
@@ -85,18 +76,13 @@ const Home = () => {
           href={LinkedinUrl}
           size="small"
           target="_blank"
-          color="secondary"
-          variant="outlined"
+          color="primary"
+          variant="contained"
           endIcon={<LinkedInIcon />}
           sx={{
             borderRadius: "20px",
-            borderColor: "primary.dark",
             marginLeft: "1rem",
-
-            "&:hover": {
-              color: "primary.dark",
-              borderColor: "secondary",
-            },
+            "&:hover": {},
           }}
         >
           Linkedin

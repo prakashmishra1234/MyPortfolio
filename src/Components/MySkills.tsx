@@ -29,6 +29,10 @@ const data: SkillsData[] = [
     logo: "/JavaScript.png",
   },
   {
+    name: "Bootstrap",
+    logo: "/Bootstrap.png",
+  },
+  {
     name: "Java",
     logo: "/Java.png",
   },
@@ -76,31 +80,43 @@ const MySkills = () => {
         </Typography>{" "}
         Skills
       </Typography>
-      <TypeAnimation
-        sequence={[
-          "Writing code using Javascript",
-          1000,
-          "Writing code using Typescript",
-          1000,
-          "Writing code using Nodejs",
-          1000,
-          "Writing code using Reactjs",
-          1000,
-          "Writing code using Java",
-          1000,
-          "Writing code using Ionic Framework",
-          1000,
-        ]}
-        wrapper="span"
-        speed={25}
-        style={{
-          fontSize: "1.5rem",
-          color: "#f0ec0a",
-          fontFamily: "cursive",
-          marginTop: "1rem",
+      <Typography
+        variant="h6"
+        fontFamily="cursive"
+        color="primary"
+        fontSize="1.5rem"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
         }}
-        repeat={Infinity}
-      />
+      >
+        <TypeAnimation
+          sequence={[
+            "Writing code using Javascript",
+            1000,
+            "Writing code using Typescript",
+            1000,
+            "Writing code using Nodejs",
+            1000,
+            "Writing code using Reactjs",
+            1000,
+            "Writing code using Java",
+            1000,
+            "Writing code using Ionic",
+            1000,
+          ]}
+          wrapper="span"
+          speed={25}
+          style={{
+            fontSize: "1.5rem",
+            color: "#f0ec0a",
+            fontFamily: "cursive",
+            marginTop: "1rem",
+          }}
+          repeat={Infinity}
+        />
+      </Typography>
+
       <Box
         sx={{
           display: "flex",
@@ -131,7 +147,9 @@ const MySkills = () => {
                 alt={item.name}
                 src={item.logo}
               />
-              <Typography>{item.name}</Typography>
+              <Typography fontFamily="monospace" fontWeight="700">
+                {item.name}
+              </Typography>
             </Paper>
           );
         })}
