@@ -89,8 +89,8 @@ const Home = () => {
     <Box
       component="img"
       sx={{
-        height: 350,
-        width: 350,
+        height: { md: 450, xs: 350 },
+        width: { md: 450, xs: 350 },
       }}
       alt="img home"
       src="/HomePageImage.png"
