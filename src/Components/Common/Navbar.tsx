@@ -9,15 +9,25 @@ import {
 } from "@mui/material";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { Link, useNavigate } from "react-router-dom";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import { AuthContext, Imodal } from "../../Store";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = React.useState<boolean>(false);
   const navigate = useNavigate();
+  const { openModal, setOpenModal } = React.useContext(AuthContext);
 
   const navigateRoute = (page: string): void => {
     navigate(page);
     setOpenMenu(false);
+  };
+
+  const openModalHandler = (data: Imodal) => {
+    setOpenModal({
+      ...openModal,
+      open: data.open,
+      comp: data.comp,
+      title: data.title,
+    });
   };
 
   return (
@@ -50,17 +60,28 @@ const Navbar = () => {
           open={openMenu}
           onClose={() => setOpenMenu(false)}
         >
-          <MenuItem sx={{ display: "flex" }} onClick={() => navigateRoute("/")}>
+          <MenuItem onClick={() => navigateRoute("/")}>
             <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               Home
             </Typography>
           </MenuItem>
-          <MenuItem
-            sx={{ display: "flex" }}
-            onClick={() => navigateRoute("/skills")}
-          >
+          <MenuItem onClick={() => navigateRoute("/skills")}>
             <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               My skills
+            </Typography>
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              openModalHandler({
+                open: true,
+                comp: "contact",
+                title: "Contact Me",
+              });
+              setOpenMenu(false);
+            }}
+          >
+            <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
+              Contact Me
             </Typography>
           </MenuItem>
         </Menu>
@@ -116,6 +137,26 @@ const Navbar = () => {
           >
             My skills
           </Link>
+        </Button>
+      </Box>
+
+      <Box
+        sx={{
+          flexGrow: 0,
+          display: { md: "flex", xs: "none" },
+        }}
+      >
+        <Button
+          variant="contained"
+          onClick={() =>
+            openModalHandler({
+              open: true,
+              comp: "contact",
+              title: "Contact Me",
+            })
+          }
+        >
+          Contact Me
         </Button>
       </Box>
     </Box>

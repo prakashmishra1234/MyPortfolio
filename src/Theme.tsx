@@ -13,14 +13,31 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        // containedPrimary: {
-        //   backgroundColor: (theme: any) => theme.palette.secondary.main,
-        //   borderColor: (theme: any) => theme.palette.secondary.main,
-        //   "&:hover": {
-        //     backgroundColor: (theme: any) => theme.palette.primary.main,
-        //     borderColor: (theme: any) => theme.palette.primary.main,
-        //   },
-        // },
+        containedPrimary: {
+          color: "#000",
+          backgroundColor: "#fff",
+          "&:hover": {
+            color: "#fff",
+          },
+        },
+      },
+    },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "#fff",
+          color: "#f00a12",
+          width: "calc(100% - 1rem)",
+          margin: "0.5rem",
+          padding: "1rem",
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          border: "red",
+        },
       },
     },
   },

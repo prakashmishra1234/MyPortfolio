@@ -61,11 +61,6 @@ const Home = () => {
           variant="contained"
           size="small"
           color="primary"
-          sx={{
-            fontSize: "small",
-            borderRadius: "20px",
-            "&:hover": {},
-          }}
           onClick={(e) => {
             window.open(ResumeURL, "_blank");
           }}
@@ -80,9 +75,7 @@ const Home = () => {
           variant="contained"
           endIcon={<LinkedInIcon />}
           sx={{
-            borderRadius: "20px",
             marginLeft: "1rem",
-            "&:hover": {},
           }}
         >
           Linkedin
@@ -95,8 +88,12 @@ const Home = () => {
     <Box
       component="img"
       sx={{
+        transition: "all 0.3s",
         height: { md: 400, xs: 350 },
         width: { md: 400, xs: 350 },
+        "&:hover": {
+          transform: "scale(1.3)",
+        },
       }}
       alt="img home"
       src="/HomePageImage.png"
