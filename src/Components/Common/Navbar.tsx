@@ -31,9 +31,9 @@ const Navbar = () => {
       }}
     >
       <Box sx={{ display: { md: "none", xs: "flex" } }}>
-        <IconButton>
+        <IconButton color="primary">
           <ListOutlinedIcon
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer", fontSize: "2rem" }}
             onClick={() => setOpenMenu(true)}
           />
         </IconButton>
@@ -54,7 +54,6 @@ const Navbar = () => {
           onClose={() => setOpenMenu(false)}
         >
           <MenuItem sx={{ display: "flex" }} onClick={() => navigateRoute("/")}>
-            {/* <HomeOutlinedIcon /> */}
             <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               Home
             </Typography>
@@ -63,22 +62,46 @@ const Navbar = () => {
             sx={{ display: "flex" }}
             onClick={() => navigateRoute("/skills")}
           >
-            {/* <HomeOutlinedIcon /> */}
             <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               My skills
             </Typography>
           </MenuItem>
         </Menu>
       </Box>
-      <Typography
-        variant="h6"
-        style={{ fontFamily: "monospace", color: "#c93b30", fontWeight: "700" }}
+      <Box>
+        <Typography
+          variant="h6"
+          color="primary"
+          style={{
+            fontFamily: "monospace",
+            fontWeight: "700",
+            display: "inline",
+          }}
+        >
+          My
+        </Typography>{" "}
+        <Typography
+          variant="h6"
+          color="secondary"
+          style={{
+            fontFamily: "monospace",
+            fontWeight: "700",
+            display: "inline",
+          }}
+        >
+          Portfolio
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          flexGrow: 0,
+          display: { md: "flex", xs: "none" },
+        }}
       >
-        My Portfolio
-      </Typography>
-      <Box sx={{ flexGrow: 0, display: { md: "flex", xs: "none" } }}>
         <Button
-          sx={{ margin: "0 1rem", color: "#c93b30" }}
+          color="primary"
+          sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/")}
         >
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
@@ -86,7 +109,8 @@ const Navbar = () => {
           </Link>
         </Button>
         <Button
-          sx={{ margin: "0 1rem", color: "#c93b30" }}
+          color="primary"
+          sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/skills")}
         >
           <Link

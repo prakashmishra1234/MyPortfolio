@@ -6,49 +6,53 @@ const Home = () => {
   const ResumeURL: string = "/dummy.pdf";
 
   const profileIntro = (
-    <Paper
-      elevation={3}
+    <Box
       sx={{
         display: "flex",
-        flexDirection: "column",
         justifyContent: "center",
+        flexDirection: "column",
         alignItems: "center",
-        width: { md: "auto", xs: "calc(100% - 80px);" },
         padding: "20px",
-        margin: { xs: "20px", md: "0 0 0 80px" },
-        backgroundColor: "#f0f1f2",
-        "@media (max-width: 600px)": {
-          boxShadow: "none",
-        },
       }}
     >
-      <Box
-        component="img"
-        sx={{
-          height: 150,
-          width: 150,
-          borderRadius: "50%",
-        }}
-        alt="Profile image"
-        src="/profileimage.jpg"
-      />
-      <Typography variant="h4" fontFamily="Edu SA Beginner">
+      <Typography
+        variant="h4"
+        fontFamily="Edu SA Beginner"
+        color="primary.dark"
+      >
         Hello everyone!
       </Typography>
-      <Typography variant="h6" fontFamily="cursive">
-        My name is Prakash Mishra
-      </Typography>
+      <Box sx={{ display: "inline", textAlign: "center" }}>
+        <Typography
+          variant="h6"
+          fontFamily="cursive"
+          color="primary"
+          sx={{ display: "inline" }}
+        >
+          My name is Prakash Mishra,
+        </Typography>{" "}
+        <Typography
+          color="secondary"
+          variant="h6"
+          fontFamily="cursive"
+          sx={{ display: "inline" }}
+        >
+          I am a Software Engineer.
+        </Typography>
+      </Box>
+
       <Box sx={{ display: "flex", paddingTop: "1rem" }}>
         <Button
           variant="outlined"
           size="small"
-          color="primary"
+          color="secondary"
           sx={{
             fontSize: "small",
             borderRadius: "20px",
+            borderColor: "primary.dark",
             "&:hover": {
-              color: "#c93b30",
-              borderColor: "#c93b30",
+              color: "primary.dark",
+              borderColor: "secondary",
             },
           }}
           onClick={(e) => {
@@ -61,70 +65,52 @@ const Home = () => {
           href={LinkedinUrl}
           size="small"
           target="_blank"
-          color="primary"
+          color="secondary"
           variant="outlined"
           endIcon={<LinkedInIcon />}
           sx={{
             borderRadius: "20px",
+            borderColor: "primary.dark",
             marginLeft: "1rem",
+
             "&:hover": {
-              color: "#c93b30",
-              borderColor: "#c93b30",
+              color: "primary.dark",
+              borderColor: "secondary",
             },
           }}
         >
           Linkedin
         </Button>
       </Box>
-    </Paper>
+    </Box>
   );
 
-  const profileAbout = (
-    <Paper
-      elevation={3}
+  const HomeImage = (
+    <Box
+      component="img"
       sx={{
-        width: { md: "25rem", xs: "calc(100% - 80px);" },
-        padding: "20px",
-        margin: { xs: "0 20px", md: "0 0 0 80px" },
-        backgroundColor: "#f0f1f2",
-        "@media (max-width: 600px)": {
-          boxShadow: "none",
-        },
+        height: 350,
+        width: 350,
       }}
-    >
-      <Typography fontWeight={600} textAlign="center">
-        About
-      </Typography>
-      <Typography fontFamily="cursive">
-        I'm a Software Engineer talented at contributing to team-developed
-        projects. Collaborative designer of useful solutions and perfectly
-        customized products. Proficient in writing application interface code
-        via JavaScript and ReactJs workflows. Adept at monitoring and
-        maintaining frontend performance and troubleshooting and debugging the
-        same to support overall performance.
-      </Typography>
-    </Paper>
+      alt="img home"
+      src="/HomePageImage.png"
+    />
   );
 
   return (
     <Box
       sx={{
-        backgroundImage: {
-          md: "url('/HomeBackground.jpg')",
-        },
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
         width: "100%",
         height: "100%",
         display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        justifyContent: "flex-start",
-        alignItems: { md: "center", xs: "center" },
+        flexDirection: { md: "row", xs: "column" },
+        justifyContent: "space-around",
+        alignItems: "center",
       }}
     >
       {profileIntro}
-      {profileAbout}
+
+      {HomeImage}
     </Box>
   );
 };
