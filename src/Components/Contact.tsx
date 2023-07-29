@@ -1,15 +1,44 @@
 import React from "react";
-import { Box, TextField, Button } from "@mui/material";
+import { Box, TextField, Button, AlertProps } from "@mui/material";
+import MuiAlert from "@mui/material/Alert";
 import { Formik } from "formik";
 import { MessageForm, MessageValidator } from "../utils/helper";
 import { AuthContext, Imodal } from "../Store";
+import emailjs from "emailjs-com";
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const Contact = () => {
   const { openModal, setOpenModal } = React.useContext(AuthContext);
+  const form = React.useRef();
 
-  const onFormSubmit = (values: MessageForm) => {
-    alert(1);
-    console.log(values);
+  const onFormSubmit = (form: any, resetFunction: any) => {
+    emailjs
+      .sendForm(
+        "service_oprp4rm",
+        "template_wydng0y",
+        form,
+        "WF7nEFv-XJPR49RN7"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+          if (result.status == 200) {
+            <Alert severity="success">Your email has been sent!</Alert>;
+            resetFunction();
+            setOpenModal({ ...openModal, open: false, comp: "", title: "" });
+          }
+        },
+        (error) => {
+          <Alert severity="error">Something went wrong!</Alert>;
+          console.log(error);
+        }
+      );
   };
   const handleClose = (data: Imodal) => {
     setOpenModal({
@@ -23,14 +52,15 @@ const Contact = () => {
     <Formik
       initialValues={MessageValidator.initials}
       validationSchema={MessageValidator.validation}
-      onSubmit={(values: MessageForm) => {
-        alert(1);
-        onFormSubmit(values);
+      onSubmit={(e: any, { resetForm }: any) => {
+        onFormSubmit(form.current, resetForm);
+        resetForm();
       }}
     >
-      {({ handleSubmit, setFieldValue }) => (
+      {({ handleSubmit, setFieldValue, isSubmitting }) => (
         <Box
           component="form"
+          ref={form}
           onSubmit={handleSubmit}
           sx={{
             width: "100%",
@@ -84,18 +114,23 @@ const Contact = () => {
             type="message"
             id="message"
             multiline
-            maxRows={5}
             rows={5}
             onChange={(event) => {
               setFieldValue("message", event.target.value);
             }}
           />
-          <Button type="submit" fullWidth variant="contained">
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            disabled={isSubmitting}
+          >
             Submit
           </Button>
           <Button
             fullWidth
             variant="contained"
+            disabled={isSubmitting}
             onClick={() => handleClose({ open: false, comp: "", title: "" })}
           >
             Cancel
