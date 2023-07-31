@@ -1,20 +1,26 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button, Box, Typography } from "@mui/material";
+import { Paper, Button, Box, Typography, Divider } from "@mui/material";
 
 const Experience = () => {
   var items = [
     {
       Ftitle: "Vivo",
       Ltitle: "Collaboration Solutions",
+      jobtitle: "Software Engineer",
+      Duration: "April, 2023 - Present",
     },
     {
       Ftitle: "SFLHUB",
       Ltitle: "Technology",
+      jobtitle: "Software Engineer",
+      Duration: "July, 2022 - April, 2023",
     },
     {
       Ftitle: "SFLHUB",
       Ltitle: "Technology",
+      jobtitle: "Software Engineer Intern",
+      Duration: "January, 2022 - June, 2022",
     },
   ];
 
@@ -40,6 +46,7 @@ const Experience = () => {
           style: {
             bottom: "0",
             top: "unset",
+            color: "red",
           },
         }}
         sx={{ width: { md: "50%", xs: "100%" } }}
@@ -64,6 +71,17 @@ const Experience = () => {
                 {item.Ltitle}
               </Typography>
             </Typography>
+            <Divider />
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Typography>{item.jobtitle}</Typography>
+              <Typography>{item.Duration}</Typography>
+            </Box>
           </Paper>
         ))}
       </Carousel>
