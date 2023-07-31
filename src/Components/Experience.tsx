@@ -54,7 +54,7 @@ const Experience = () => {
       }}
     >
       <Carousel
-        // autoPlay={false}
+        autoPlay={false}
         animation="fade"
         indicatorIconButtonProps={{
           style: {},
