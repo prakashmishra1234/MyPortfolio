@@ -92,7 +92,9 @@ const Home = () => {
         height: { md: 400, xs: 350 },
         width: { md: 400, xs: 350 },
         "&:hover": {
-          transform: "scale(1.3)",
+          md: {
+            transform: "scale(1.3)",
+          },
         },
       }}
       alt="img home"

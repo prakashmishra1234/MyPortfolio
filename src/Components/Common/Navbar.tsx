@@ -70,6 +70,11 @@ const Navbar = () => {
               My skills
             </Typography>
           </MenuItem>
+          <MenuItem onClick={() => navigateRoute("/experience")}>
+            <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
+              My Experience
+            </Typography>
+          </MenuItem>
           <MenuItem
             onClick={() => {
               openModalHandler({
@@ -122,21 +127,21 @@ const Navbar = () => {
           sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/")}
         >
-          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            Home
-          </Link>
+          Home
         </Button>
         <Button
           color="primary"
           sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/skills")}
         >
-          <Link
-            to="/skills"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            My skills
-          </Link>
+          My skills
+        </Button>
+        <Button
+          color="primary"
+          sx={{ margin: "0 1rem", fontWeight: "600" }}
+          onClick={() => navigateRoute("/experience")}
+        >
+          My Experience
         </Button>
       </Box>
 
@@ -148,6 +153,7 @@ const Navbar = () => {
       >
         <Button
           variant="contained"
+          size="small"
           onClick={() =>
             openModalHandler({
               open: true,
