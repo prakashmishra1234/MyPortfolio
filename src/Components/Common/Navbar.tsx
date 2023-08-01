@@ -96,7 +96,6 @@ const Navbar = () => {
           variant="h6"
           color="primary"
           style={{
-            fontFamily: "monospace",
             fontWeight: "700",
             display: "inline",
           }}
@@ -107,7 +106,6 @@ const Navbar = () => {
           variant="h6"
           color="secondary"
           style={{
-            fontFamily: "monospace",
             fontWeight: "700",
             display: "inline",
           }}

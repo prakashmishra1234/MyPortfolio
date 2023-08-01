@@ -27,7 +27,6 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result);
           if (result.status == 200) {
             <Alert severity="success">Your email has been sent!</Alert>;
             resetFunction();

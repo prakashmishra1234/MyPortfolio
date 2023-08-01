@@ -16,13 +16,12 @@ const Home = () => {
         padding: "20px",
       }}
     >
-      <Typography variant="h4" fontFamily="cursive" color="primary">
+      <Typography variant="h4" color="primary">
         Hello everyone!
       </Typography>
       <Box sx={{ display: "inline", textAlign: "center" }}>
         <Typography
           variant="h6"
-          fontFamily="cursive"
           color="primary"
           fontSize="1.5rem"
           sx={{
@@ -49,7 +48,6 @@ const Home = () => {
             style={{
               fontSize: "1.5rem",
               color: "#f0ec0a",
-              fontFamily: "cursive",
             }}
             repeat={Infinity}
           />

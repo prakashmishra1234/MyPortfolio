@@ -8,10 +8,8 @@ body,
   overflow: auto;
   background: linear-gradient(
     90deg,
-    rgba(63, 94, 251, 1) 0%,
-    rgba(94, 90, 228, 1) 13%,
-    rgba(111, 88, 215, 1) 66%,
-    rgba(124, 86, 205, 1) 84%,
-    rgba(135, 85, 196, 1) 100%
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 75%,
+    rgba(252, 176, 69, 1) 100%
   );
 }

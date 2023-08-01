@@ -1,4 +1,4 @@
-import { Box, Typography, Paper } from "@mui/material";
+import { Box, Typography, Paper, Grow } from "@mui/material";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
@@ -51,6 +51,7 @@ const data: SkillsData[] = [
 ];
 
 const MySkills = () => {
+  const time = 1;
   return (
     <Box
       sx={{
@@ -82,7 +83,6 @@ const MySkills = () => {
       </Typography>
       <Typography
         variant="h6"
-        fontFamily="cursive"
         color="primary"
         fontSize="1.5rem"
         sx={{
@@ -110,7 +110,6 @@ const MySkills = () => {
           style={{
             fontSize: "1.5rem",
             color: "#f0ec0a",
-            fontFamily: "cursive",
             marginTop: "1rem",
           }}
           repeat={Infinity}
@@ -128,29 +127,29 @@ const MySkills = () => {
       >
         {data.map((item, index) => {
           return (
-            <Paper
-              key={index}
-              elevation={3}
-              sx={{
-                margin: "20px",
-                minWidth: "5rem",
-                padding: "2px",
-              }}
-            >
-              <Box
-                component="img"
+            <Grow in={true} timeout={index === 0 ? time : index * 1000 * time}>
+              <Paper
+                key={index}
+                elevation={3}
                 sx={{
-                  height: 70,
-                  width: 70,
-                  padding: "1rem",
+                  margin: "20px",
+                  minWidth: "5rem",
+                  padding: "2px",
                 }}
-                alt={item.name}
-                src={item.logo}
-              />
-              <Typography fontFamily="monospace" fontWeight="700">
-                {item.name}
-              </Typography>
-            </Paper>
+              >
+                <Box
+                  component="img"
+                  sx={{
+                    height: 70,
+                    width: 70,
+                    padding: "1rem",
+                  }}
+                  alt={item.name}
+                  src={item.logo}
+                />
+                <Typography fontWeight="700">{item.name}</Typography>
+              </Paper>
+            </Grow>
           );
         })}
       </Box>

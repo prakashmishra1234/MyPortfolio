@@ -1,17 +1,18 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button, Box, Typography, Divider } from "@mui/material";
+import { Paper, Button, Box, Typography, Divider, Grow } from "@mui/material";
 import RadioButtonCheckedOutlinedIcon from "@mui/icons-material/RadioButtonCheckedOutlined";
 
 const Experience = () => {
+  const time = 1;
   var items = [
-    {
-      Ftitle: "Vivo",
-      Ltitle: "Collaboration Solutions",
-      jobtitle: "Software Engineer",
-      Duration: "May, 2023 - Present",
-      content: [],
-    },
+    // {
+    //   Ftitle: "Vivo",
+    //   Ltitle: "Collaboration Solutions",
+    //   jobtitle: "Software Engineer",
+    //   Duration: "May, 2023 - Present",
+    //   content: [],
+    // },
     {
       Ftitle: "SFLHUB",
       Ltitle: "Technology",
@@ -64,26 +65,24 @@ const Experience = () => {
             color: "red",
           },
         }}
-        sx={{ width: { md: "50%", xs: "100%" } }}
+        sx={{
+          width: { md: "60%", xs: "100%" },
+        }}
       >
         {items.map((item, i) => (
-          <Paper
+          <Box
             key={i}
-            elevation={3}
             sx={{
               height: "75vh",
-              backgroundColor: "#fff",
               padding: "1rem",
+              backgroundColor: "#fff",
+              borderRadius: "2rem",
+              overflowY: "auto",
             }}
           >
-            <Typography variant="h5" color="primary" fontFamily="monospace">
+            <Typography variant="h5" color="primary.dark">
               {item.Ftitle}{" "}
-              <Typography
-                variant="h5"
-                component="span"
-                color="secondary"
-                fontFamily="monospace"
-              >
+              <Typography variant="h5" component="span">
                 {item.Ltitle}
               </Typography>
             </Typography>
@@ -98,48 +97,35 @@ const Experience = () => {
               <Typography>{item.jobtitle}</Typography>
               <Typography>{item.Duration}</Typography>
             </Box>
-            <Box sx={{ paddingTop: "1rem" }}>
+            <Box
+              sx={{
+                paddingTop: "1rem",
+              }}
+            >
               {item.content.map((point, index) => {
                 return (
-                  <React.Fragment key={index}>
-                    {index === item.content.length - 1 ? (
-                      <Box
-                        sx={{
-                          my: "1rem",
-                          display: "flex",
-                        }}
-                      >
-                        <RadioButtonCheckedOutlinedIcon
-                          sx={{
-                            fontSize: "1rem",
-                            marginRight: "5px",
-                            marginTop: "5px",
-                          }}
-                        />
-                        <Typography fontWeight="700">{point}</Typography>
-                      </Box>
-                    ) : (
-                      <Box
-                        sx={{
-                          my: "1rem",
-                          display: "flex",
-                        }}
-                      >
-                        <RadioButtonCheckedOutlinedIcon
-                          sx={{
-                            fontSize: "1rem",
-                            marginRight: "5px",
-                            marginTop: "5px",
-                          }}
-                        />
-                        <Typography>{point}</Typography>
-                      </Box>
-                    )}
-                  </React.Fragment>
+                  <Grow
+                    key={index}
+                    in={true}
+                    timeout={index === 0 ? time : index * 1000 * time}
+                  >
+                    <Paper
+                      elevation={3}
+                      style={{ marginBottom: "0.5rem", padding: "0.3rem" }}
+                    >
+                      {index === item.content.length - 1 ? (
+                        <Typography color="#000" fontWeight="700">
+                          {point}
+                        </Typography>
+                      ) : (
+                        <Typography color="#000">{point}</Typography>
+                      )}
+                    </Paper>
+                  </Grow>
                 );
               })}
             </Box>
-          </Paper>
+          </Box>
         ))}
       </Carousel>
     </Box>
