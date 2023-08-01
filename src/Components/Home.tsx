@@ -1,8 +1,24 @@
-import { Box, Typography, Button, Paper } from "@mui/material";
+import React from "react";
+import { Box, Button } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { TypeAnimation } from "react-type-animation";
+import { CustomThemeSwitch, CustomTypo } from "../Theme";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 
 const Home = () => {
+  const [theme, setTheme] = React.useState<string>("light");
+
+  React.useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("myportfolio")!);
+    setTheme(data?.theme ?? "light");
+  }, []);
+
+  const changeTheme = (value: string): void => {
+    localStorage.setItem("myportfolio", JSON.stringify({ theme: value }));
+    window.location.reload();
+  };
+
   const LinkedinUrl: string = "https://www.linkedin.com/in/prakashmishra1234/";
   const ResumeURL: string = "/dummy.pdf";
 
@@ -16,13 +32,10 @@ const Home = () => {
         padding: "20px",
       }}
     >
-      <Typography variant="h4" color="primary">
-        Hello everyone!
-      </Typography>
+      <CustomTypo variant="h4">Hello everyone!</CustomTypo>
       <Box sx={{ display: "inline", textAlign: "center" }}>
-        <Typography
+        <CustomTypo
           variant="h6"
-          color="primary"
           fontSize="1.5rem"
           sx={{
             display: "flex",
@@ -32,33 +45,32 @@ const Home = () => {
           My name is Prakash Mishra, I'm a{" "}
           <TypeAnimation
             sequence={[
-              "Software Engineer.",
+              "Software Engineer",
               1000,
-              "React Developer.",
+              "React Developer",
               1000,
-              "Javascript Developer.",
+              "Javascript Developer",
               1000,
-              "Nodejs Developer.",
+              "Nodejs Developer",
               1000,
-              "Android Developer.",
+              "Android Developer",
               1000,
             ]}
             wrapper="span"
             speed={25}
             style={{
               fontSize: "1.5rem",
-              color: "#f0ec0a",
+              color: "inherit",
             }}
             repeat={Infinity}
           />
-        </Typography>
+        </CustomTypo>
       </Box>
 
       <Box sx={{ display: "flex", paddingTop: "1rem" }}>
         <Button
           variant="contained"
           size="small"
-          color="primary"
           onClick={(e) => {
             window.open(ResumeURL, "_blank");
           }}
@@ -69,7 +81,6 @@ const Home = () => {
           href={LinkedinUrl}
           size="small"
           target="_blank"
-          color="primary"
           variant="contained"
           endIcon={<LinkedInIcon />}
           sx={{
@@ -79,6 +90,28 @@ const Home = () => {
           Linkedin
         </Button>
       </Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: "1rem",
+        }}
+      >
+        <LightModeOutlinedIcon sx={{ color: "#fff" }} />
+        <CustomThemeSwitch
+          sx={{}}
+          onChange={() => {
+            if (theme === "light") {
+              changeTheme("dark");
+            } else {
+              changeTheme("light");
+            }
+          }}
+          checked={theme === "light" ? false : true}
+        />
+        <DarkModeOutlinedIcon />
+      </Box>
     </Box>
   );
 
@@ -86,7 +119,7 @@ const Home = () => {
     <Box
       component="img"
       sx={{
-        transition: "all 0.3s",
+        transition: "all 1.5s",
         height: { md: 400, xs: 350 },
         width: { md: 400, xs: 350 },
         "&:hover": {
