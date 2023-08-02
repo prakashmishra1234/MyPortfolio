@@ -120,6 +120,7 @@ const MySkills = () => {
           style={{
             fontSize: "1.5rem",
             marginTop: "1rem",
+            color: "inherit",
           }}
           repeat={Infinity}
         />

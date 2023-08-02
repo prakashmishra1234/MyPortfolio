@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import { MessageForm, MessageValidator } from "../utils/helper";
 import { AuthContext, Imodal } from "../Store";
 import emailjs from "emailjs-com";
+import { CustomBox } from "../Theme";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -47,6 +48,7 @@ const Contact = () => {
       title: data.title,
     });
   };
+
   return (
     <Formik
       initialValues={MessageValidator.initials}

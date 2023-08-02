@@ -98,7 +98,7 @@ const Home = () => {
           paddingTop: "1rem",
         }}
       >
-        <LightModeOutlinedIcon sx={{ color: "#fff" }} />
+        <LightModeOutlinedIcon />
         <CustomThemeSwitch
           sx={{}}
           onChange={() => {

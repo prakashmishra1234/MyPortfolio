@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button, Box, Typography, Divider, Grow } from "@mui/material";
 import RadioButtonCheckedOutlinedIcon from "@mui/icons-material/RadioButtonCheckedOutlined";
+import { CustomTypo } from "../Theme";
 
 const Experience = () => {
   const time = 1;
@@ -61,9 +62,7 @@ const Experience = () => {
           style: {},
         }}
         activeIndicatorIconButtonProps={{
-          style: {
-            color: "red",
-          },
+          style: {},
         }}
         sx={{
           width: { md: "60%", xs: "100%" },
@@ -75,17 +74,16 @@ const Experience = () => {
             sx={{
               height: "75vh",
               padding: "1rem",
-              backgroundColor: "#fff",
               borderRadius: "2rem",
               overflowY: "auto",
             }}
           >
-            <Typography variant="h5" color="primary.dark">
+            <CustomTypo variant="h5">
               {item.Ftitle}{" "}
               <Typography variant="h5" component="span">
                 {item.Ltitle}
               </Typography>
-            </Typography>
+            </CustomTypo>
             <Divider />
             <Box
               sx={{
@@ -94,8 +92,8 @@ const Experience = () => {
                 alignItems: "center",
               }}
             >
-              <Typography>{item.jobtitle}</Typography>
-              <Typography>{item.Duration}</Typography>
+              <CustomTypo>{item.jobtitle}</CustomTypo>
+              <CustomTypo>{item.Duration}</CustomTypo>
             </Box>
             <Box
               sx={{
@@ -114,11 +112,9 @@ const Experience = () => {
                       style={{ marginBottom: "0.5rem", padding: "0.3rem" }}
                     >
                       {index === item.content.length - 1 ? (
-                        <Typography color="#000" fontWeight="700">
-                          {point}
-                        </Typography>
+                        <CustomTypo fontWeight="700">{point}</CustomTypo>
                       ) : (
-                        <Typography color="#000">{point}</Typography>
+                        <CustomTypo>{point}</CustomTypo>
                       )}
                     </Paper>
                   </Grow>

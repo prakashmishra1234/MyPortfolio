@@ -5,47 +5,69 @@ import { styled } from "@mui/material/styles";
 const localStorageData = JSON.parse(localStorage.getItem("myportfolio")!);
 const themeValue = localStorageData?.theme ?? "light";
 
+const primary = {
+  main: "#a1a09f",
+  dark: "#b32d24",
+  light: "#f7f7f7",
+};
+
+const secondary = {
+  main: "#5e5c57",
+  light: "",
+  dark: "",
+};
+
 const theme = createTheme({
   palette: {
     mode: themeValue,
-    primary: {
-      main: "#fff",
-      dark: "#000",
-      light: "#fff",
-    },
-    secondary: {
-      main: "#f0ec0a",
-    },
+    primary: primary,
+    secondary: secondary,
   },
   components: {
     MuiButton: {
       styleOverrides: {
-        containedPrimary: {
-          color: "#000",
-          backgroundColor: "#fff",
+        containedPrimary: (theme) => ({
+          color:
+            theme.theme.palette.mode === "dark"
+              ? theme.theme.palette.primary.light
+              : theme.theme.palette.primary.dark,
+          backgroundColor:
+            theme.theme.palette.mode === "dark"
+              ? theme.theme.palette.primary.dark
+              : theme.theme.palette.primary.light,
           "&:hover": {
-            color: "#fff",
+            color:
+              theme.theme.palette.mode === "dark"
+                ? theme.theme.palette.primary.dark
+                : theme.theme.palette.primary.light,
+            backgroundColor:
+              theme.theme.palette.mode === "dark"
+                ? theme.theme.palette.primary.light
+                : theme.theme.palette.primary.dark,
           },
-        },
+        }),
       },
     },
     MuiDialog: {
       styleOverrides: {
-        paper: {
-          backgroundColor: "#fff",
-          color: "#f00a12",
+        paper: (theme) => ({
+          background:
+            theme.theme.palette.mode === "dark"
+              ? theme.theme.palette.secondary.main
+              : theme.theme.palette.primary.light,
+          color:
+            theme.theme.palette.mode === "dark"
+              ? theme.theme.palette.primary.light
+              : theme.theme.palette.primary.dark,
           width: "calc(100% - 1rem)",
           margin: "0.5rem",
           padding: "1rem",
-        },
+        }),
       },
     },
+
     MuiTextField: {
-      styleOverrides: {
-        root: {
-          border: "red",
-        },
-      },
+      styleOverrides: {},
     },
     MuiTypography: {
       styleOverrides: {},
@@ -58,17 +80,19 @@ export const CustomBox = styled(Box)(({ theme }) => ({
   width: "100%",
   background:
     theme.palette.mode === "light"
-      ? "linear-gradient( 90deg, rgba(131, 58, 180, 1) 0%,  rgba(253, 29, 29, 1) 75%, rgba(252, 76, 9, 1) 100%)"
+      ? " linear-gradient(90deg, rgba(251,244,244,1) 0%, rgba(245,229,225,1) 61%, rgba(191,192,195,1) 100%)"
       : "linear-gradient(90deg, rgba(35,34,36,1) 0%, rgba(51,47,47,1) 61%, rgba(116,115,113,1) 100%)",
 }));
 
 export const CustomThemeSwitch = styled(Switch)(({ theme }) => ({}));
 
-export const CustomTypo = styled(Typography)(({}) => ({
+export const CustomTypo = styled(Typography)(({ theme }) => ({
   color:
     theme.palette.mode === "dark"
       ? theme.palette.primary.light
       : theme.palette.primary.dark,
+  fontFamily: `"Times New Roman",
+  serif`,
 }));
 
 export default responsiveFontSizes(theme);
