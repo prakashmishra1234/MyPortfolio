@@ -1,4 +1,4 @@
-import { Box, Switch, Typography } from "@mui/material";
+import { Box, Switch, Typography, Button } from "@mui/material";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
 
@@ -35,6 +35,7 @@ const theme = createTheme({
             theme.theme.palette.mode === "dark"
               ? theme.theme.palette.primary.dark
               : theme.theme.palette.primary.light,
+          fontWeight: "600",
           "&:hover": {
             color:
               theme.theme.palette.mode === "dark"
@@ -65,12 +66,25 @@ const theme = createTheme({
         }),
       },
     },
-
     MuiTextField: {
       styleOverrides: {},
     },
     MuiTypography: {
       styleOverrides: {},
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: (theme) => ({
+          color:
+            theme.theme.palette.mode === "dark"
+              ? theme.theme.palette.primary.light
+              : theme.theme.palette.primary.dark,
+          backgroundColor:
+            theme.theme.palette.mode === "dark"
+              ? theme.theme.palette.secondary.main
+              : theme.theme.palette.primary.light,
+        }),
+      },
     },
   },
 });
@@ -93,6 +107,25 @@ export const CustomTypo = styled(Typography)(({ theme }) => ({
       : theme.palette.primary.dark,
   fontFamily: `"Times New Roman",
   serif`,
+}));
+
+export const NavButton = styled(Button)(({ theme }) => ({
+  color:
+    theme.palette.mode === "dark"
+      ? theme.palette.primary.light
+      : theme.palette.primary.dark,
+  "&:hover": {},
+}));
+
+export const CorouselBox = styled(Box)(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === "dark"
+      ? theme.palette.secondary.main
+      : theme.palette.primary.light,
+  color:
+    theme.palette.mode === "dark"
+      ? theme.palette.secondary.light
+      : theme.palette.primary.dark,
 }));
 
 export default responsiveFontSizes(theme);

@@ -3,7 +3,7 @@ import { Box, Menu, MenuItem, IconButton, Button } from "@mui/material";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext, Imodal } from "../../Store";
-import { CustomTypo } from "../../Theme";
+import { CustomTypo, NavButton } from "../../Theme";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = React.useState<boolean>(false);
@@ -112,24 +112,24 @@ const Navbar = () => {
           display: { md: "flex", xs: "none" },
         }}
       >
-        <Button
+        <NavButton
           sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/")}
         >
           Home
-        </Button>
-        <Button
+        </NavButton>
+        <NavButton
           sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/skills")}
         >
           My skills
-        </Button>
-        <Button
+        </NavButton>
+        <NavButton
           sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/experience")}
         >
           My Experience
-        </Button>
+        </NavButton>
       </Box>
 
       <Box

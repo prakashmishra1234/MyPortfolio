@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button, Box, Typography, Divider, Grow } from "@mui/material";
 import RadioButtonCheckedOutlinedIcon from "@mui/icons-material/RadioButtonCheckedOutlined";
-import { CustomTypo } from "../Theme";
+import { CorouselBox, CustomTypo } from "../Theme";
 
 const Experience = () => {
   const time = 1;
@@ -70,57 +70,63 @@ const Experience = () => {
       >
         {items.map((item, i) => (
           <Box
-            key={i}
             sx={{
-              height: "75vh",
-              padding: "1rem",
-              borderRadius: "2rem",
+              height: { md: "70vh", xs: "85vh" },
               overflowY: "auto",
             }}
           >
-            <CustomTypo variant="h5">
-              {item.Ftitle}{" "}
-              <Typography variant="h5" component="span">
-                {item.Ltitle}
-              </Typography>
-            </CustomTypo>
-            <Divider />
-            <Box
+            <CorouselBox
+              key={i}
               sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
+                height: "auto",
+                padding: "1rem",
+                // borderRadius: "2rem",
               }}
             >
-              <CustomTypo>{item.jobtitle}</CustomTypo>
-              <CustomTypo>{item.Duration}</CustomTypo>
-            </Box>
-            <Box
-              sx={{
-                paddingTop: "1rem",
-              }}
-            >
-              {item.content.map((point, index) => {
-                return (
-                  <Grow
-                    key={index}
-                    in={true}
-                    timeout={index === 0 ? time : index * 1000 * time}
-                  >
-                    <Paper
-                      elevation={3}
-                      style={{ marginBottom: "0.5rem", padding: "0.3rem" }}
+              <CustomTypo variant="h5">
+                {item.Ftitle}{" "}
+                <Typography variant="h5" component="span">
+                  {item.Ltitle}
+                </Typography>
+              </CustomTypo>
+              <Divider />
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <CustomTypo>{item.jobtitle}</CustomTypo>
+                <CustomTypo>{item.Duration}</CustomTypo>
+              </Box>
+              <Box
+                sx={{
+                  paddingTop: "1rem",
+                }}
+              >
+                {item.content.map((point, index) => {
+                  return (
+                    <Grow
+                      key={index}
+                      in={true}
+                      timeout={index === 0 ? time : index * 1000 * time}
                     >
-                      {index === item.content.length - 1 ? (
-                        <CustomTypo fontWeight="700">{point}</CustomTypo>
-                      ) : (
-                        <CustomTypo>{point}</CustomTypo>
-                      )}
-                    </Paper>
-                  </Grow>
-                );
-              })}
-            </Box>
+                      <Paper
+                        elevation={3}
+                        style={{ marginBottom: "0.5rem", padding: "0.3rem" }}
+                      >
+                        {index === item.content.length - 1 ? (
+                          <CustomTypo fontWeight="700">{point}</CustomTypo>
+                        ) : (
+                          <CustomTypo>{point}</CustomTypo>
+                        )}
+                      </Paper>
+                    </Grow>
+                  );
+                })}
+              </Box>
+            </CorouselBox>
           </Box>
         ))}
       </Carousel>
