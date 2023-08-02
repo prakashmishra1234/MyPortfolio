@@ -71,7 +71,7 @@ const Experience = () => {
         {items.map((item, i) => (
           <Box
             sx={{
-              height: { md: "70vh", xs: "80vh" },
+              height: { xs: "80vh" },
               overflowY: "auto",
             }}
           >

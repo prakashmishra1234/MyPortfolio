@@ -61,6 +61,7 @@ const Home = () => {
             style={{
               fontSize: "1.5rem",
               color: "inherit",
+              fontFamily: "inherit",
             }}
             repeat={Infinity}
           />

@@ -113,12 +113,12 @@ const MySkills = () => {
             "Writing code using Java",
             1000,
             "Writing code using Ionic",
-            1000,
+            2000,
           ]}
           wrapper="span"
           speed={25}
           style={{
-            fontSize: "1.5rem",
+            fontSize: "1.2rem",
             marginTop: "1rem",
             color: "inherit",
           }}
