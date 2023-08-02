@@ -85,6 +85,11 @@ const Navbar = () => {
               Home
             </CustomTypo>
           </MenuItem>
+          <MenuItem onClick={() => navigateRoute("/about")}>
+            <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
+              About
+            </CustomTypo>
+          </MenuItem>
           <MenuItem onClick={() => navigateRoute("/skills")}>
             <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
               My skills
@@ -131,6 +136,12 @@ const Navbar = () => {
           onClick={() => navigateRoute("/")}
         >
           Home
+        </NavButton>
+        <NavButton
+          sx={{ margin: "0 1rem", fontWeight: "600" }}
+          onClick={() => navigateRoute("/about")}
+        >
+          About
         </NavButton>
         <NavButton
           sx={{ margin: "0 1rem", fontWeight: "600" }}
