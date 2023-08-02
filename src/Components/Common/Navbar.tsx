@@ -1,9 +1,35 @@
 import React from "react";
-import { Box, Menu, MenuItem, IconButton, Button } from "@mui/material";
+import {
+  Box,
+  Menu,
+  MenuItem,
+  IconButton,
+  Button,
+  Typography,
+} from "@mui/material";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext, Imodal } from "../../Store";
 import { CustomTypo, NavButton } from "../../Theme";
+
+const classCss = {
+  fontWeight: "700",
+  textTransform: "uppercase",
+  backgroundImage:
+    "linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100% )",
+  backgroundClip: "border-box",
+  backgroundSize: "200% auto",
+  color: "#fff",
+  WebkitTextFillColor: "transparent",
+  WebkitBackgroundClip: "text",
+  animation: "textclip 2s linear infinite",
+  display: "inline-block",
+  "@keyframes textclip": {
+    to: {
+      backgroundPosition: "200% center",
+    },
+  },
+};
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = React.useState<boolean>(false);
@@ -86,24 +112,12 @@ const Navbar = () => {
         </Menu>
       </Box>
       <Box>
-        <CustomTypo
-          variant="h6"
-          style={{
-            fontWeight: "700",
-            display: "inline",
-          }}
-        >
-          My
+        <CustomTypo variant="h6" sx={classCss}>
+          My{" "}
+          <Typography component="span" sx={classCss}>
+            Portfolio
+          </Typography>
         </CustomTypo>{" "}
-        <CustomTypo
-          variant="h6"
-          style={{
-            fontWeight: "700",
-            display: "inline",
-          }}
-        >
-          Portfolio
-        </CustomTypo>
       </Box>
 
       <Box

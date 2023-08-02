@@ -71,7 +71,7 @@ const Experience = () => {
         {items.map((item, i) => (
           <Box
             sx={{
-              height: { md: "70vh", xs: "85vh" },
+              height: { md: "70vh", xs: "80vh" },
               overflowY: "auto",
             }}
           >
@@ -80,7 +80,6 @@ const Experience = () => {
               sx={{
                 height: "auto",
                 padding: "1rem",
-                // borderRadius: "2rem",
               }}
             >
               <CustomTypo variant="h5">

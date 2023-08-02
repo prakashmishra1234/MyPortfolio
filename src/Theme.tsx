@@ -3,7 +3,7 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
 
 const localStorageData = JSON.parse(localStorage.getItem("myportfolio")!);
-const themeValue = localStorageData?.theme ?? "light";
+const themeValue = localStorageData?.theme ?? "dark";
 
 const primary = {
   main: "#a1a09f",
@@ -94,7 +94,7 @@ export const CustomBox = styled(Box)(({ theme }) => ({
   width: "100%",
   background:
     theme.palette.mode === "light"
-      ? " linear-gradient(90deg, rgba(251,244,244,1) 0%, rgba(245,229,225,1) 61%, rgba(191,192,195,1) 100%)"
+      ? "linear-gradient(90deg, rgba(247,242,241,1) 1%, rgba(246,244,243,1) 54%, rgba(232,232,224,1) 100%)"
       : "linear-gradient(90deg, rgba(35,34,36,1) 0%, rgba(51,47,47,1) 61%, rgba(116,115,113,1) 100%)",
 }));
 

@@ -7,11 +7,11 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 
 const Home = () => {
-  const [theme, setTheme] = React.useState<string>("light");
+  const [theme, setTheme] = React.useState<string>("dark");
 
   React.useEffect(() => {
     const data = JSON.parse(localStorage.getItem("myportfolio")!);
-    setTheme(data?.theme ?? "light");
+    setTheme(data?.theme ?? "dark");
   }, []);
 
   const changeTheme = (value: string): void => {
