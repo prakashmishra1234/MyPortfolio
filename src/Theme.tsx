@@ -94,7 +94,8 @@ export const CustomBox = styled(Box)(({ theme }) => ({
   width: "100%",
   background:
     theme.palette.mode === "light"
-      ? "linear-gradient(0deg, rgba(40,33,168,1) 0%, rgba(176,48,41,1) 100%)"
+      ? // ? "linear-gradient(0deg, rgba(40,33,168,1) 0%, rgba(176,48,41,1) 100%)"
+        "#ebedeb"
       : "linear-gradient(90deg, rgba(35,34,36,1) 0%, rgba(51,47,47,1) 61%, rgba(116,115,113,1) 100%)",
 }));
 
