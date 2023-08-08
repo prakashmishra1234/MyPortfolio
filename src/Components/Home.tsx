@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Switch, Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { TypeAnimation } from "react-type-animation";
-import { CustomThemeSwitch, CustomTypo } from "../Theme";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 
@@ -32,11 +31,10 @@ const Home = () => {
         padding: "20px",
       }}
     >
-      <CustomTypo variant="h4">Hello everyone!</CustomTypo>
+      <Typography variant="h4">Hello everyone!</Typography>
       <Box sx={{ display: "inline", textAlign: "center" }}>
-        <CustomTypo
+        <Typography
           variant="h6"
-          fontSize="1.5rem"
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -59,13 +57,12 @@ const Home = () => {
             wrapper="span"
             speed={25}
             style={{
-              fontSize: "1.5rem",
               color: "inherit",
               fontFamily: "inherit",
             }}
             repeat={Infinity}
           />
-        </CustomTypo>
+        </Typography>
       </Box>
 
       <Box sx={{ display: "flex", paddingTop: "1rem" }}>
@@ -100,7 +97,7 @@ const Home = () => {
         }}
       >
         <LightModeOutlinedIcon />
-        <CustomThemeSwitch
+        <Switch
           sx={{}}
           onChange={() => {
             if (theme === "light") {

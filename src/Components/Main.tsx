@@ -3,11 +3,11 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Common/Navbar";
 import CustomModal from "./Common/CustomModal";
-import { CustomBox } from "../Theme";
+import { MainBox } from "./styled/Components";
 
 const Main = () => {
   return (
-    <CustomBox>
+    <MainBox>
       <CustomModal />
       <Box sx={{ height: "4rem" }}>
         <Navbar />
@@ -16,7 +16,7 @@ const Main = () => {
       <Box sx={{ height: "calc(100% - 4rem)", overflowY: "auto" }}>
         <Outlet />
       </Box>
-    </CustomBox>
+    </MainBox>
   );
 };
 

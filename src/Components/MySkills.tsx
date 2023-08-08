@@ -1,7 +1,6 @@
 import { Box, Typography, Paper, Grow } from "@mui/material";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import { CustomTypo } from "../Theme";
 
 interface SkillsData {
   name: string;
@@ -74,7 +73,7 @@ const MySkills = () => {
         width: "100%",
       }}
     >
-      <CustomTypo
+      <Typography
         variant="h6"
         sx={{
           fontWeight: "700",
@@ -91,8 +90,8 @@ const MySkills = () => {
           My
         </Typography>{" "}
         Skills
-      </CustomTypo>
-      <CustomTypo
+      </Typography>
+      <Typography
         variant="h6"
         fontSize="1.5rem"
         sx={{
@@ -124,7 +123,7 @@ const MySkills = () => {
           }}
           repeat={Infinity}
         />
-      </CustomTypo>
+      </Typography>
 
       <Box
         sx={{
@@ -163,7 +162,7 @@ const MySkills = () => {
                   alt={item.name}
                   src={item.logo}
                 />
-                <CustomTypo fontWeight="700">{item.name}</CustomTypo>
+                <Typography fontWeight="700">{item.name}</Typography>
               </Paper>
             </Grow>
           );

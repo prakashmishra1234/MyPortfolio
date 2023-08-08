@@ -12,7 +12,7 @@ const primary = {
 };
 
 const secondary = {
-  main: "#5e5c57",
+  main: "#292923",
   light: "",
   dark: "#000",
 };
@@ -70,7 +70,21 @@ const theme = createTheme({
       styleOverrides: {},
     },
     MuiTypography: {
-      styleOverrides: {},
+      styleOverrides: {
+        h5: {
+          fontFamily: "monospace",
+        },
+        h6: {
+          fontFamily: "cursive",
+        },
+        h4: (theme) => ({
+          color:
+            theme.theme.palette.mode === "dark"
+              ? theme.theme.palette.primary.dark
+              : theme.theme.palette.secondary.main,
+          fontFamily: "cursive",
+        }),
+      },
     },
     MuiPaper: {
       styleOverrides: {
@@ -88,16 +102,6 @@ const theme = createTheme({
     },
   },
 });
-
-export const CustomBox = styled(Box)(({ theme }) => ({
-  height: "100%",
-  width: "100%",
-  background:
-    theme.palette.mode === "light"
-      ? // ? "linear-gradient(0deg, rgba(40,33,168,1) 0%, rgba(176,48,41,1) 100%)"
-        "#ebedeb"
-      : "linear-gradient(90deg, rgba(35,34,36,1) 0%, rgba(51,47,47,1) 61%, rgba(116,115,113,1) 100%)",
-}));
 
 export const CustomThemeSwitch = styled(Switch)(({ theme }) => ({}));
 

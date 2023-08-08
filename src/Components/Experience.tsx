@@ -1,8 +1,6 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button, Box, Typography, Divider, Grow } from "@mui/material";
-import RadioButtonCheckedOutlinedIcon from "@mui/icons-material/RadioButtonCheckedOutlined";
-import { CorouselBox, CustomTypo } from "../Theme";
+import { Paper, Box, Typography, Divider, Grow } from "@mui/material";
 
 const Experience = () => {
   const time = 1;
@@ -75,19 +73,19 @@ const Experience = () => {
               overflowY: "auto",
             }}
           >
-            <CorouselBox
+            <Box
               key={i}
               sx={{
                 height: "auto",
                 padding: "1rem",
               }}
             >
-              <CustomTypo variant="h5">
+              <Typography variant="h5">
                 {item.Ftitle}{" "}
                 <Typography variant="h5" component="span">
                   {item.Ltitle}
                 </Typography>
-              </CustomTypo>
+              </Typography>
               <Divider />
               <Box
                 sx={{
@@ -96,8 +94,8 @@ const Experience = () => {
                   alignItems: "center",
                 }}
               >
-                <CustomTypo>{item.jobtitle}</CustomTypo>
-                <CustomTypo>{item.Duration}</CustomTypo>
+                <Typography>{item.jobtitle}</Typography>
+                <Typography>{item.Duration}</Typography>
               </Box>
               <Box
                 sx={{
@@ -116,16 +114,16 @@ const Experience = () => {
                         style={{ marginBottom: "0.5rem", padding: "0.3rem" }}
                       >
                         {index === item.content.length - 1 ? (
-                          <CustomTypo fontWeight="700">{point}</CustomTypo>
+                          <Typography fontWeight="700">{point}</Typography>
                         ) : (
-                          <CustomTypo>{point}</CustomTypo>
+                          <Typography>{point}</Typography>
                         )}
                       </Paper>
                     </Grow>
                   );
                 })}
               </Box>
-            </CorouselBox>
+            </Box>
           </Box>
         ))}
       </Carousel>

@@ -10,26 +10,7 @@ import {
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext, Imodal } from "../../Store";
-import { CustomTypo, NavButton } from "../../Theme";
-
-const classCss = {
-  fontWeight: "700",
-  textTransform: "uppercase",
-  backgroundImage:
-    "linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100% )",
-  backgroundClip: "border-box",
-  backgroundSize: "200% auto",
-  color: "#fff",
-  WebkitTextFillColor: "transparent",
-  WebkitBackgroundClip: "text",
-  animation: "textclip 2s linear infinite",
-  display: "inline-block",
-  "@keyframes textclip": {
-    to: {
-      backgroundPosition: "200% center",
-    },
-  },
-};
+import { LogoText, NavigationButton } from "../styled/Components";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = React.useState<boolean>(false);
@@ -81,24 +62,24 @@ const Navbar = () => {
           onClose={() => setOpenMenu(false)}
         >
           <MenuItem onClick={() => navigateRoute("/")}>
-            <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
+            <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               Home
-            </CustomTypo>
+            </Typography>
           </MenuItem>
           <MenuItem onClick={() => navigateRoute("/about")}>
-            <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
+            <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               About
-            </CustomTypo>
+            </Typography>
           </MenuItem>
           <MenuItem onClick={() => navigateRoute("/skills")}>
-            <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
+            <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               My skills
-            </CustomTypo>
+            </Typography>
           </MenuItem>
           <MenuItem onClick={() => navigateRoute("/experience")}>
-            <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
+            <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               My Experience
-            </CustomTypo>
+            </Typography>
           </MenuItem>
           <MenuItem
             onClick={() => {
@@ -110,19 +91,19 @@ const Navbar = () => {
               setOpenMenu(false);
             }}
           >
-            <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
+            <Typography textAlign="center" sx={{ marginLeft: "1rem" }}>
               Contact Me
-            </CustomTypo>
+            </Typography>
           </MenuItem>
         </Menu>
       </Box>
       <Box>
-        <CustomTypo variant="h6" sx={classCss}>
+        <LogoText variant="h5">
           My{" "}
-          <Typography component="span" sx={classCss}>
+          <Typography variant="h5" component="span">
             Portfolio
           </Typography>
-        </CustomTypo>{" "}
+        </LogoText>{" "}
       </Box>
 
       <Box
@@ -131,30 +112,18 @@ const Navbar = () => {
           display: { md: "flex", xs: "none" },
         }}
       >
-        <NavButton
-          sx={{ margin: "0 1rem", fontWeight: "600" }}
-          onClick={() => navigateRoute("/")}
-        >
+        <NavigationButton onClick={() => navigateRoute("/")}>
           Home
-        </NavButton>
-        <NavButton
-          sx={{ margin: "0 1rem", fontWeight: "600" }}
-          onClick={() => navigateRoute("/about")}
-        >
+        </NavigationButton>
+        <NavigationButton onClick={() => navigateRoute("/about")}>
           About
-        </NavButton>
-        <NavButton
-          sx={{ margin: "0 1rem", fontWeight: "600" }}
-          onClick={() => navigateRoute("/skills")}
-        >
+        </NavigationButton>
+        <NavigationButton onClick={() => navigateRoute("/skills")}>
           My skills
-        </NavButton>
-        <NavButton
-          sx={{ margin: "0 1rem", fontWeight: "600" }}
-          onClick={() => navigateRoute("/experience")}
-        >
+        </NavigationButton>
+        <NavigationButton onClick={() => navigateRoute("/experience")}>
           My Experience
-        </NavButton>
+        </NavigationButton>
       </Box>
 
       <Box

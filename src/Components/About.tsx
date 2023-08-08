@@ -1,6 +1,5 @@
-import { Box, Grow, Paper } from "@mui/material";
+import { Box, Grow, Paper, Typography } from "@mui/material";
 import React from "react";
-import { CustomTypo } from "../Theme";
 
 const About = () => {
   const data =
@@ -23,7 +22,7 @@ const About = () => {
             padding: "1rem",
           }}
         >
-          <CustomTypo>{data}</CustomTypo>
+          <Typography>{data}</Typography>
         </Paper>
       </Grow>
     </Box>

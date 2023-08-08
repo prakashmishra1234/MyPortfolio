@@ -2,10 +2,9 @@ import React from "react";
 import { Box, TextField, Button, AlertProps } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import { Formik } from "formik";
-import { MessageForm, MessageValidator } from "../utils/helper";
+import { MessageValidator } from "../utils/helper";
 import { AuthContext, Imodal } from "../Store";
 import emailjs from "emailjs-com";
-import { CustomBox } from "../Theme";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
