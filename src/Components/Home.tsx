@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   const LinkedinUrl: string = "https://www.linkedin.com/in/prakashmishra1234/";
-  const ResumeURL: string = "/dummy.pdf";
+  const ResumeURL: string = "/Prakash-Mishra-Resume.pdf";
 
   const profileIntro = (
     <Box

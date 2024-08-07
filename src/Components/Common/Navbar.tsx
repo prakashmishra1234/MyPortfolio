@@ -92,12 +92,12 @@ const Navbar = () => {
           </MenuItem>
           <MenuItem onClick={() => navigateRoute("/skills")}>
             <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
-              My skills
+              Skills
             </CustomTypo>
           </MenuItem>
           <MenuItem onClick={() => navigateRoute("/experience")}>
             <CustomTypo textAlign="center" sx={{ marginLeft: "1rem" }}>
-              My Experience
+              Experience
             </CustomTypo>
           </MenuItem>
           <MenuItem
@@ -118,7 +118,6 @@ const Navbar = () => {
       </Box>
       <Box>
         <CustomTypo variant="h6" sx={classCss}>
-          My{" "}
           <Typography component="span" sx={classCss}>
             Portfolio
           </Typography>
@@ -147,13 +146,13 @@ const Navbar = () => {
           sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/skills")}
         >
-          My skills
+          Skills
         </NavButton>
         <NavButton
           sx={{ margin: "0 1rem", fontWeight: "600" }}
           onClick={() => navigateRoute("/experience")}
         >
-          My Experience
+          Experience
         </NavButton>
       </Box>
 

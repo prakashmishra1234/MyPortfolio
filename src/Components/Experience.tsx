@@ -3,17 +3,30 @@ import Carousel from "react-material-ui-carousel";
 import { Paper, Button, Box, Typography, Divider, Grow } from "@mui/material";
 import RadioButtonCheckedOutlinedIcon from "@mui/icons-material/RadioButtonCheckedOutlined";
 import { CorouselBox, CustomTypo } from "../Theme";
+import Accordion from "@mui/material/Accordion";
+import AccordionActions from "@mui/material/AccordionActions";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Experience = () => {
   const time = 1;
   var items = [
-    // {
-    //   Ftitle: "Vivo",
-    //   Ltitle: "Collaboration Solutions",
-    //   jobtitle: "Software Engineer",
-    //   Duration: "May, 2023 - Present",
-    //   content: [],
-    // },
+    {
+      Ftitle: "Vivo",
+      Ltitle: "Collaboration Solutions",
+      jobtitle: "Software Engineer",
+      Duration: "May, 2023 - Present",
+      content: [
+        "Spearheaded optimization efforts for React Ionic applications, leveraging custom Capacitor plugins to streamline background task management and ensure real-time data updates.",
+        "Demonstrated proficiency in ReactJS by diagnosing and resolving critical bugs, including issues with Material-UI components, ensuring a seamless user experience.",
+        "Integrated AWS services (Cognito, API Gateway, Lambda, SNS, SQS, SES) to architect scalable, secure, and cost-effective solutions, enhancing application functionality.",
+        "Engineered serverless backend solutions using AWS Lambda, optimizing performance and resource utilization for mission-critical applications.",
+        "Implemented Amazon Cognito for seamless authentication and user management within React applications, prioritizing data security and user privacy.",
+        "Configured and optimized Amazon SNS, SQS, and SES for efficient messaging and email communication, enhancing system reliability and scalability while ensuring compliance with industry standards.",
+        "Technology used : Amazon Web Services, Typescript, Javascript, ReactJs, Ionic Framework, Material UI, Java, Android.",
+      ],
+    },
     {
       Ftitle: "SFLHUB",
       Ltitle: "Technology",
@@ -48,14 +61,13 @@ const Experience = () => {
     <Box
       sx={{
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        flexDirection: "column",
         height: "100%",
         width: "calc(100% - 40px)",
         padding: "0 20px",
       }}
     >
-      <Carousel
+      {/* <Carousel
         autoPlay={false}
         animation="fade"
         indicatorIconButtonProps={{
@@ -128,7 +140,53 @@ const Experience = () => {
             </CorouselBox>
           </Box>
         ))}
-      </Carousel>
+      </Carousel> */}
+
+      {items.map((item, index) => {
+        return (
+          <React.Fragment key={index}>
+            <Grow
+              in={true}
+              timeout={
+                index === 0 ? 1 * 1000 * time : (index + 1) * 1000 * time
+              }
+            >
+              <Accordion defaultExpanded={index === 0 ? true : false}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  <CustomTypo pr={1}>
+                    {item.jobtitle}
+                    {" at"}
+                  </CustomTypo>
+                  <CustomTypo pr={1}>
+                    {item.Ftitle} {item.Ltitle}
+                  </CustomTypo>
+                  <CustomTypo>
+                    {"("}
+                    {item.Duration}
+                    {")"}
+                  </CustomTypo>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {item.content.map((i, ind) => {
+                    return (
+                      <React.Fragment key={ind}>
+                        <CustomTypo>
+                          {" * "}
+                          {i}
+                        </CustomTypo>
+                      </React.Fragment>
+                    );
+                  })}
+                </AccordionDetails>
+              </Accordion>
+            </Grow>
+          </React.Fragment>
+        );
+      })}
     </Box>
   );
 };
