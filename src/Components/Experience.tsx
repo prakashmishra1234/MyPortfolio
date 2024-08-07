@@ -145,12 +145,7 @@ const Experience = () => {
       {items.map((item, index) => {
         return (
           <React.Fragment key={index}>
-            <Grow
-              in={true}
-              timeout={
-                index === 0 ? 1 * 1000 * time : (index + 1) * 1000 * time
-              }
-            >
+            <Grow in={true} timeout={(index + 1) * 1000 * time}>
               <Accordion defaultExpanded={index === 0 ? true : false}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
